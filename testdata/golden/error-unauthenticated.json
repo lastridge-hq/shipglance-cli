@@ -1,0 +1,11 @@
+{
+  "body": {
+    "error": {
+      "kind": "unauthenticated",
+      "message": "Authentication required: send a token as \"Authorization: Bearer \u003ctoken\u003e\".",
+      "retryable": false
+    },
+    "schemaVersion": 1
+  },
+  "status": 401
+}

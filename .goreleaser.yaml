@@ -1,0 +1,67 @@
+# Release build for the shipglance CLI. Tag vX.Y.Z and the release workflow
+# runs `goreleaser release`; see RELEASING.md for the full checklist (the
+# control-plane step included).
+version: 2
+
+project_name: shipglance
+
+before:
+  hooks:
+    - go mod tidy
+    - go test ./...
+
+builds:
+  - id: shipglance
+    main: ./cmd/shipglance
+    binary: shipglance
+    env:
+      - CGO_ENABLED=0
+    goos: [darwin, linux, windows]
+    goarch: [amd64, arm64]
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w -X main.version={{ .Version }}
+
+archives:
+  - id: shipglance
+    formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files:
+      - LICENSE.md
+      - README.md
+
+checksum:
+  name_template: "checksums.txt"
+
+changelog:
+  use: github
+  sort: asc
+
+homebrew_casks:
+  - name: shipglance
+    repository:
+      owner: lastridge
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
+    homepage: "https://shipglance.com"
+    description: "Read your ShipGlance deploy board from the terminal and coding agents"
+    license: "FSL-1.1-ALv2"
+    commit_author:
+      name: shipglance-release
+      email: hello@shipglance.com
+    # Unsigned builds (see RELEASING.md): clear quarantine so macOS runs it.
+    hooks:
+      post:
+        install: |
+          if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/shipglance"]
+          end
+
+release:
+  github:
+    owner: lastridge
+    name: shipglance-cli

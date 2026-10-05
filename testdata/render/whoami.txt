@@ -1,0 +1,4 @@
+Workspace  acme (http://BOARD)
+Plan       Free — 14 days of history
+History    off · replay off
+Server     test-version

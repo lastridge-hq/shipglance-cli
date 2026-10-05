@@ -1,0 +1,66 @@
+{
+  "activity": [
+    "failed",
+    "queued",
+    "quiet",
+    "running",
+    "steady"
+  ],
+  "attention": [
+    "active",
+    "drifting",
+    "failed",
+    "quiet",
+    "steady",
+    "uncertain"
+  ],
+  "deployOutcome": [
+    "failed",
+    "succeeded"
+  ],
+  "driftKind": [
+    "drifting",
+    "not_evaluated",
+    "unknown",
+    "up_to_date"
+  ],
+  "errorKind": [
+    "cli_upgrade_required",
+    "invalid_request",
+    "not_found",
+    "plan_feature_locked",
+    "provider_unavailable",
+    "rate_limited",
+    "storage_unavailable",
+    "token_revoked",
+    "unauthenticated",
+    "workspace_unavailable"
+  ],
+  "evidenceState": [
+    "complete",
+    "partial"
+  ],
+  "feature": [
+    "replay",
+    "shares"
+  ],
+  "freshnessKind": [
+    "fresh",
+    "retained"
+  ],
+  "runStatus": [
+    "cancelled",
+    "failure",
+    "notrun",
+    "queued",
+    "running",
+    "skipped",
+    "success",
+    "unknown"
+  ],
+  "truncationReason": [
+    "list_cap",
+    "provider_window",
+    "retention"
+  ]
+}

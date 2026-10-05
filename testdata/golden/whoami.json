@@ -1,0 +1,18 @@
+{
+  "body": {
+    "capabilities": {
+      "history": false,
+      "replay": false
+    },
+    "plan": {
+      "historyDays": 14,
+      "label": "Free",
+      "upgradeUrl": "https://app.shipglance.com/plan"
+    },
+    "schemaVersion": 1,
+    "serverVersion": "test-version",
+    "title": "Acme deploys",
+    "workspace": null
+  },
+  "status": 200
+}

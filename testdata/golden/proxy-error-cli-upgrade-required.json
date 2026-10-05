@@ -1,0 +1,13 @@
+{
+  "body": {
+    "error": {
+      "kind": "cli_upgrade_required",
+      "message": "This version of the shipglance CLI is no longer supported. Upgrade to 0.2.0 or newer.",
+      "minimumVersion": "0.2.0",
+      "retryable": false,
+      "upgradeUrl": "https://github.com/lastridge/shipglance-cli/releases/latest"
+    },
+    "schemaVersion": 1
+  },
+  "status": 400
+}

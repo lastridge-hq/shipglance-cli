@@ -1,0 +1,11 @@
+{
+  "body": {
+    "error": {
+      "kind": "token_revoked",
+      "message": "This token was revoked. Create a new one in the board's settings.",
+      "retryable": false
+    },
+    "schemaVersion": 1
+  },
+  "status": 401
+}

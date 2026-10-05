@@ -1,0 +1,11 @@
+{
+  "body": {
+    "error": {
+      "kind": "workspace_unavailable",
+      "message": "The workspace is starting. Retry shortly.",
+      "retryable": true
+    },
+    "schemaVersion": 1
+  },
+  "status": 503
+}

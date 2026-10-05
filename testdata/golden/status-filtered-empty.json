@@ -1,0 +1,23 @@
+{
+  "body": {
+    "boards": [],
+    "dataAgeSeconds": 60,
+    "generatedAt": "2026-10-04T12:00:00Z",
+    "notMonitored": {
+      "items": [],
+      "truncation": {
+        "boundary": null,
+        "omitted": 2,
+        "reason": "list_cap"
+      }
+    },
+    "plan": {
+      "historyDays": 14,
+      "label": "Free",
+      "upgradeUrl": "https://app.shipglance.com/plan"
+    },
+    "schemaVersion": 1,
+    "snapshotAgeSeconds": 0
+  },
+  "status": 200
+}

@@ -1,0 +1,11 @@
+{
+  "body": {
+    "error": {
+      "kind": "not_found",
+      "message": "This token does not belong to the workspace at this host.",
+      "retryable": false
+    },
+    "schemaVersion": 1
+  },
+  "status": 404
+}

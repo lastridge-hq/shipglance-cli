@@ -1,0 +1,14 @@
+{
+  "body": {
+    "capabilities": {
+      "history": false,
+      "replay": false
+    },
+    "plan": null,
+    "schemaVersion": 1,
+    "serverVersion": "test-version",
+    "title": "Acme deploys",
+    "workspace": null
+  },
+  "status": 200
+}

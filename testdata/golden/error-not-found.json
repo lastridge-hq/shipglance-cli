@@ -1,0 +1,11 @@
+{
+  "body": {
+    "error": {
+      "kind": "not_found",
+      "message": "No such v1 endpoint or method.",
+      "retryable": false
+    },
+    "schemaVersion": 1
+  },
+  "status": 404
+}

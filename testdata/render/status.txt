@@ -1,0 +1,4 @@
+  BOARD                  ATTENTION  DEPLOYED              DRIFT
+✓ acme/api · deploy.yml  drifting   prod bbbbbbb 74d ago  drifting
+4 workflows not monitored on the Free plan. Upgrade: https://app.shipglance.com/plan
+Snapshot 5m ago.

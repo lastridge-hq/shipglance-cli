@@ -1,0 +1,690 @@
+{
+  "body": {
+    "boards": [
+      {
+        "activity": "steady",
+        "attention": "drifting",
+        "branch": "main",
+        "deployments": [
+          {
+            "current": {
+              "completedAt": "2026-07-21T17:58:00Z",
+              "runNumber": 100,
+              "sha": "bbbbbbbb"
+            },
+            "drift": {
+              "kind": "up_to_date"
+            },
+            "env": "prod",
+            "stage": "prod",
+            "target": ""
+          }
+        ],
+        "drift": {
+          "kind": "drifting"
+        },
+        "error": null,
+        "evidence": {
+          "reasons": [
+            "window_bounded"
+          ],
+          "state": "partial"
+        },
+        "freshness": {
+          "fetchedAt": "2026-10-04T11:59:00Z",
+          "kind": "fresh"
+        },
+        "id": "api",
+        "name": "api",
+        "provider": "github",
+        "repo": "acme/api",
+        "runs": {
+          "items": [
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-current",
+              "runNumber": 100,
+              "sha": "bbbbbbbb",
+              "stages": [
+                {
+                  "completedAt": null,
+                  "deploy": false,
+                  "durationSeconds": 0,
+                  "env": "",
+                  "job": "build",
+                  "key": "build",
+                  "label": "Build",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                },
+                {
+                  "completedAt": "2026-07-21T17:58:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                },
+                {
+                  "completedAt": null,
+                  "deploy": false,
+                  "durationSeconds": 0,
+                  "env": "",
+                  "job": "notify",
+                  "key": "notify",
+                  "label": "Notify",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T17:58:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-b",
+              "runNumber": 99,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T15:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "failure",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "failure",
+              "updatedAt": "2026-07-21T15:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-c",
+              "runNumber": 98,
+              "sha": "bbbbbbbb",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T14:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T14:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-d",
+              "runNumber": 97,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T13:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T13:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-e",
+              "runNumber": 96,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T12:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T12:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-f",
+              "runNumber": 95,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T11:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T11:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-g",
+              "runNumber": 94,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T10:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T10:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-h",
+              "runNumber": 93,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T09:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T09:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-i",
+              "runNumber": 92,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T08:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T08:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-j",
+              "runNumber": 91,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T07:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T07:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-k",
+              "runNumber": 90,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T06:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T06:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-l",
+              "runNumber": 89,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T05:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T05:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-m",
+              "runNumber": 88,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T04:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T04:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-n",
+              "runNumber": 87,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T03:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T03:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-o",
+              "runNumber": 86,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T02:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T02:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-p",
+              "runNumber": 85,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T01:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T01:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-q",
+              "runNumber": 84,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-21T00:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-21T00:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-r",
+              "runNumber": 83,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-20T23:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-20T23:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-s",
+              "runNumber": 82,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-20T22:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-20T22:00:00Z",
+              "webUrl": ""
+            },
+            {
+              "actor": "",
+              "attempt": 1,
+              "createdAt": "0001-01-01T00:00:00Z",
+              "durationSeconds": 0,
+              "event": "",
+              "message": "",
+              "runId": "api-prior-t",
+              "runNumber": 81,
+              "sha": "aaaaaaaa",
+              "stages": [
+                {
+                  "completedAt": "2026-07-20T21:00:00Z",
+                  "deploy": true,
+                  "durationSeconds": 0,
+                  "env": "prod",
+                  "job": "deploy-prod",
+                  "key": "prod",
+                  "label": "Production",
+                  "startedAt": null,
+                  "status": "success",
+                  "target": "",
+                  "webUrl": ""
+                }
+              ],
+              "status": "success",
+              "updatedAt": "2026-07-20T21:00:00Z",
+              "webUrl": ""
+            }
+          ],
+          "truncation": {
+            "boundary": "2026-07-20T21:00:00Z",
+            "reason": "provider_window"
+          }
+        },
+        "status": "success",
+        "webUrl": "",
+        "workflow": ".github/workflows/deploy.yml"
+      }
+    ],
+    "dataAgeSeconds": 60,
+    "generatedAt": "2026-10-04T12:00:00Z",
+    "notMonitored": {
+      "items": [
+        {
+          "name": "acme/web · deploy",
+          "repo": "acme/web",
+          "workflow": ".github/workflows/deploy.yml"
+        },
+        {
+          "name": "acme/legacy · ci",
+          "repo": "acme/legacy",
+          "workflow": null
+        }
+      ],
+      "truncation": {
+        "boundary": null,
+        "omitted": 2,
+        "reason": "list_cap"
+      }
+    },
+    "plan": {
+      "historyDays": 14,
+      "label": "Free",
+      "upgradeUrl": "https://app.shipglance.com/plan"
+    },
+    "schemaVersion": 1,
+    "snapshotAgeSeconds": 0
+  },
+  "status": 200
+}

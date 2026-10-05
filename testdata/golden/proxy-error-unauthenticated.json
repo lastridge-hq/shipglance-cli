@@ -1,0 +1,11 @@
+{
+  "body": {
+    "error": {
+      "kind": "unauthenticated",
+      "message": "Send a workspace token as \"Authorization: Bearer sgt_…\". Create one in the board's settings.",
+      "retryable": false
+    },
+    "schemaVersion": 1
+  },
+  "status": 401
+}
