@@ -78,6 +78,8 @@ On a terminal, a newer release is mentioned on stderr at most once a day
 (`SHIPGLANCE_NO_UPDATE_NOTIFIER=1` turns that off). In `--json` output it is
 the `notice` field instead.
 
+macOS builds are signed with a Developer ID and notarized by Apple.
+
 ## Build from source
 
 ```sh

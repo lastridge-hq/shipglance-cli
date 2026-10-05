@@ -34,6 +34,25 @@ archives:
       - LICENSE.md
       - README.md
 
+# macOS: sign the darwin binaries with the Developer ID Application identity
+# and notarize them with an App Store Connect API key — from Linux (GoReleaser
+# signs with quill; no Mac in the release job). Off when the secrets are absent
+# (snapshot builds, forks); the release workflow refuses to run without them,
+# so a published release is never unsigned. Secrets: RELEASING.md.
+notarize:
+  macos:
+    - enabled: '{{ isEnvSet "MACOS_SIGN_P12" }}'
+      ids: [shipglance]
+      sign:
+        certificate: "{{ .Env.MACOS_SIGN_P12 }}"
+        password: "{{ .Env.MACOS_SIGN_PASSWORD }}"
+      notarize:
+        issuer_id: "{{ .Env.MACOS_NOTARY_ISSUER_ID }}"
+        key_id: "{{ .Env.MACOS_NOTARY_KEY_ID }}"
+        key: "{{ .Env.MACOS_NOTARY_KEY }}"
+        wait: true
+        timeout: 20m
+
 checksum:
   name_template: "checksums.txt"
 
@@ -53,13 +72,6 @@ homebrew_casks:
     commit_author:
       name: shipglance-release
       email: hello@shipglance.com
-    # Unsigned builds (see RELEASING.md): clear quarantine so macOS runs it.
-    hooks:
-      post:
-        install: |
-          if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/shipglance"]
-          end
 
 release:
   github:

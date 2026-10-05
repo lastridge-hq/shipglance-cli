@@ -2,12 +2,35 @@ name: release
 on:
   push:
     tags: ["v*.*.*"]
+
 permissions:
   contents: write
+
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
+    # The signing and notarization secrets live in this environment, which
+    # only v* tags may use (Settings → Environments → release → deployment
+    # tags). Pull requests, forks included, never see them.
+    environment: release
     steps:
+      - name: Refuse to release unsigned
+        env:
+          MACOS_SIGN_P12: ${{ secrets.MACOS_SIGN_P12 }}
+          MACOS_SIGN_PASSWORD: ${{ secrets.MACOS_SIGN_PASSWORD }}
+          MACOS_NOTARY_ISSUER_ID: ${{ secrets.MACOS_NOTARY_ISSUER_ID }}
+          MACOS_NOTARY_KEY_ID: ${{ secrets.MACOS_NOTARY_KEY_ID }}
+          MACOS_NOTARY_KEY: ${{ secrets.MACOS_NOTARY_KEY }}
+          HOMEBREW_TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+        run: |
+          missing=""
+          for name in MACOS_SIGN_P12 MACOS_SIGN_PASSWORD MACOS_NOTARY_ISSUER_ID MACOS_NOTARY_KEY_ID MACOS_NOTARY_KEY HOMEBREW_TAP_TOKEN; do
+            [ -n "${!name}" ] || missing="$missing $name"
+          done
+          if [ -n "$missing" ]; then
+            echo "::error::release secrets missing:$missing (see RELEASING.md)"
+            exit 1
+          fi
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -21,3 +44,43 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HOMEBREW_TAP_TOKEN: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+          MACOS_SIGN_P12: ${{ secrets.MACOS_SIGN_P12 }}
+          MACOS_SIGN_PASSWORD: ${{ secrets.MACOS_SIGN_PASSWORD }}
+          MACOS_NOTARY_ISSUER_ID: ${{ secrets.MACOS_NOTARY_ISSUER_ID }}
+          MACOS_NOTARY_KEY_ID: ${{ secrets.MACOS_NOTARY_KEY_ID }}
+          MACOS_NOTARY_KEY: ${{ secrets.MACOS_NOTARY_KEY }}
+
+  # Proof from the other side: what a Mac user downloads is signed by the
+  # Developer ID, hardened-runtime, and accepted by Gatekeeper as notarized.
+  verify-macos:
+    needs: goreleaser
+    runs-on: macos-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Download the published darwin archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download "$GITHUB_REF_NAME" -R "$GITHUB_REPOSITORY" -p '*_darwin_*.tar.gz' -p checksums.txt
+      - name: Checksums
+        run: grep '_darwin_' checksums.txt | shasum -a 256 -c -
+      - name: Signed, hardened, notarized
+        run: |
+          set -euo pipefail
+          for archive in shipglance_*_darwin_*.tar.gz; do
+            dir="${archive%.tar.gz}"
+            mkdir "$dir" && tar -xzf "$archive" -C "$dir"
+            bin="$dir/shipglance"
+            echo "== $archive"
+            codesign --verify --strict --verbose=2 "$bin"
+            details="$(codesign -dvv "$bin" 2>&1)"
+            echo "$details" | grep -q "Authority=Developer ID Application: Armen Shimoon (6T85S58P8C)" || { echo "::error::$archive is not signed by the Developer ID"; exit 1; }
+            echo "$details" | grep -q "flags=.*runtime" || { echo "::error::$archive lacks the hardened runtime"; exit 1; }
+            assessment="$(spctl --assess --type install -vv "$bin" 2>&1 || true)"
+            echo "$assessment"
+            echo "$assessment" | grep -q "source=Notarized Developer ID" || { echo "::error::$archive is not accepted by Gatekeeper as notarized"; exit 1; }
+          done
+      - name: Runs
+        run: |
+          case "$(uname -m)" in arm64) arch=arm64 ;; *) arch=amd64 ;; esac
+          shipglance_*_darwin_"$arch"/shipglance version --json=false
