@@ -20,12 +20,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/lastridge/shipglance-cli/internal/auth"
-	"github.com/lastridge/shipglance-cli/internal/client"
-	"github.com/lastridge/shipglance-cli/internal/notice"
-	"github.com/lastridge/shipglance-cli/internal/outcome"
-	"github.com/lastridge/shipglance-cli/internal/query"
-	"github.com/lastridge/shipglance-cli/internal/render"
+	"github.com/lastridge-hq/shipglance-cli/internal/auth"
+	"github.com/lastridge-hq/shipglance-cli/internal/client"
+	"github.com/lastridge-hq/shipglance-cli/internal/notice"
+	"github.com/lastridge-hq/shipglance-cli/internal/outcome"
+	"github.com/lastridge-hq/shipglance-cli/internal/query"
+	"github.com/lastridge-hq/shipglance-cli/internal/render"
 )
 
 // version is set at release time (-ldflags "-X main.version=…"); a local

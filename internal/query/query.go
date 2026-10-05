@@ -11,9 +11,9 @@ import (
 	"mime"
 	"net/url"
 
-	"github.com/lastridge/shipglance-cli/internal/client"
-	"github.com/lastridge/shipglance-cli/internal/outcome"
-	"github.com/lastridge/shipglance-cli/internal/version"
+	"github.com/lastridge-hq/shipglance-cli/internal/client"
+	"github.com/lastridge-hq/shipglance-cli/internal/outcome"
+	"github.com/lastridge-hq/shipglance-cli/internal/version"
 )
 
 // Getter is the network seam (internal/client.Client in production).
@@ -23,7 +23,7 @@ type Getter interface {
 
 // UpgradeURL is where every update prompt points: the latest release lists
 // every install channel.
-const UpgradeURL = "https://github.com/lastridge/shipglance-cli/releases/latest"
+const UpgradeURL = "https://github.com/lastridge-hq/shipglance-cli/releases/latest"
 
 // Notice says a newer CLI exists. It is data; each edge decides how to show
 // it (stderr once a day on a terminal, inline in --json and MCP).

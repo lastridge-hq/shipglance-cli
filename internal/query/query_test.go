@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/lastridge/shipglance-cli/internal/client"
-	"github.com/lastridge/shipglance-cli/internal/outcome"
+	"github.com/lastridge-hq/shipglance-cli/internal/client"
+	"github.com/lastridge-hq/shipglance-cli/internal/outcome"
 )
 
 // fixture is one response recorded from the real server (make cli-fixtures

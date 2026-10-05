@@ -12,7 +12,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/lastridge/shipglance-cli/internal/auth"
+	"github.com/lastridge-hq/shipglance-cli/internal/auth"
 )
 
 // The version headers the server sends on every /api/v1 response once CLI

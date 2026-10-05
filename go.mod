@@ -1,3 +1,3 @@
-module github.com/lastridge/shipglance-cli
+module github.com/lastridge-hq/shipglance-cli
 
 go 1.26

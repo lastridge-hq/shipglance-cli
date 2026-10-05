@@ -8,8 +8,8 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/lastridge/shipglance-cli/internal/outcome"
-	"github.com/lastridge/shipglance-cli/internal/query"
+	"github.com/lastridge-hq/shipglance-cli/internal/outcome"
+	"github.com/lastridge-hq/shipglance-cli/internal/query"
 )
 
 // Envelope is the one --json shape (docs/cli-plan.md §5): the CLI owns the

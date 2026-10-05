@@ -9,7 +9,7 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/lastridge/shipglance-cli/internal/query"
+	"github.com/lastridge-hq/shipglance-cli/internal/query"
 )
 
 // Problem writes a refusal or failure for a person.
